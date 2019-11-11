@@ -14,5 +14,13 @@ In this project, we made use of Python to explore data related to bike share sys
   - new_york_city.csv
   - washington.csv
 
+### Softwares required
+To complete this project, the following software requirements apply:
+
+1. You should have Python 3, NumPy, and pandas installed using Anaconda
+2. A text editor, like Sublime or Atom.
+3. A terminal application (Terminal on Mac and Linux or Cygwin on Windows).
+
+
 ### Credits
 Udacity Programming for Data Science Nanodegree program
