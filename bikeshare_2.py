@@ -31,8 +31,8 @@ def get_filters():
     while True:
         filter = input('Would you like to filter the data by month, day, both or not at all? Type \"none\" for no time filter.\n')
         if filter == 'month':
+            day = 'all'
             while True:
-                day = 'all'
                 month = input('Which month? January, February, March, April, May, or June?\n').lower()
                 if month not in ('january','february','march', 'april', 'may', 'june'):
                     print('Oops! Please enter a valid month!')
@@ -41,8 +41,8 @@ def get_filters():
             break
 
         elif filter == 'day':
+            month = 'all'
             while True:
-                month = 'all'
                 day = input('Which day? (e.g., Sunday, Monday, Tuesday..?)\n').lower()
                 if day not in ('sunday', 'monday', 'tuesday','wednesday','thursday','friday','saturday'):
                     print('Oops! Please enter a valid day!')
