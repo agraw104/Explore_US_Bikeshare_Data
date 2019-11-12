@@ -6,6 +6,25 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+
+def month_input():
+    while True:
+        month = input('Which month? January, February, March, April, May, or June?\n').lower()
+        if month not in ('january','february','march', 'april', 'may', 'june'):
+            print('Oops! Please enter a valid month!')
+        else:
+            break
+
+
+def day_input():
+        while True:
+            day = input('Which day? (e.g., Sunday, Monday, Tuesday..?)\n').lower()
+            if day not in ('sunday', 'monday', 'tuesday','wednesday','thursday','friday','saturday'):
+                print('Oops! Please enter a valid day!')
+            else:
+                break
+
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -31,38 +50,18 @@ def get_filters():
     while True:
         filter = input('Would you like to filter the data by month, day, both or not at all? Type \"none\" for no time filter.\n')
         if filter == 'month':
-            while True:
-                day = 'all'
-                month = input('Which month? January, February, March, April, May, or June?\n').lower()
-                if month not in ('january','february','march', 'april', 'may', 'june'):
-                    print('Oops! Please enter a valid month!')
-                else:
-                    break
+            day = 'all'
+            month_input()
             break
 
         elif filter == 'day':
-            while True:
-                month = 'all'
-                day = input('Which day? (e.g., Sunday, Monday, Tuesday..?)\n').lower()
-                if day not in ('sunday', 'monday', 'tuesday','wednesday','thursday','friday','saturday'):
-                    print('Oops! Please enter a valid day!')
-                else:
-                    break
+            month = 'all'
+            day_input()
             break
 
         elif filter == 'both':
-            while True:
-                month = input('Which month? January, February, March, April, May, or June?\n').lower()
-                if month not in ('january','february','march', 'april', 'may', 'june'):
-                    print('Oops! Please enter a valid month!')
-                else:
-                    break
-            while True:
-                day = input('Which day? (e.g., Sunday, Monday, Tuesday..?)\n').lower()
-                if day not in ('sunday', 'monday', 'tuesday','wednesday','thursday','friday','saturday'):
-                    print('Oops! Please enter a valid day!')
-                else:
-                    break
+            month_input()
+            day_input()
             break
 
         elif filter == 'none':
